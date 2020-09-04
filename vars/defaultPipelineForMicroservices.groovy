@@ -11,10 +11,10 @@ def call(body) {
             skipDefaultCheckout(true)
         }
         environment{
-            ARTIFACTORY_URL=pipelineParams.ARTIFACTORY_URL
-            COMPONENT_NAME=pipelineParams.COMPONENT_NAME
-            HELM_DEV_REPOSITORY=pipelineParams.HELM_DEV_REPOSITORY
-            DOCKER_DEV_REPOSITORY=pipelineParams.DOCKER_DEV_REPOSITORY
+            ARTIFACTORY_URL="${pipelineParams.ARTIFACTORY_URL}"
+            COMPONENT_NAME="${pipelineParams.COMPONENT_NAME}"
+            HELM_DEV_REPOSITORY="${pipelineParams.HELM_DEV_REPOSITORY}"
+            DOCKER_DEV_REPOSITORY="${pipelineParams.DOCKER_DEV_REPOSITORY}"
             DOCKER_DEV_REGISTRY="angelnunez-${DOCKER_DEV_REPOSITORY}.jfrog.io"
             DOCKER_DEV_IMAGE="${DOCKER_DEV_REGISTRY}/${COMPONENT_NAME}"
             DOCKER_INTEGRACION_REPOSITORY="docker-integracion-local"
