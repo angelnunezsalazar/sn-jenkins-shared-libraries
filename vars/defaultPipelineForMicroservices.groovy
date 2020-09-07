@@ -46,7 +46,7 @@ def call(body) {
                 when {
                     expression {
                         timeout(time: 3, unit: 'DAYS') {
-                            input message: 'Promocionar a Integración?'
+                            input message: 'Promocionar a Integración?', submitter: getUsersForRole('calidad')
                             return true
                         }
                     }
